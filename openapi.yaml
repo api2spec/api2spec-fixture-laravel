@@ -1,0 +1,511 @@
+openapi: 3.0.3
+info:
+  title: API
+  version: 1.0.0
+paths:
+  /brew:
+    get:
+      tags:
+        - brew
+      operationId: getBrew
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /brews:
+    get:
+      tags:
+        - brews
+      operationId: getIndex
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    post:
+      tags:
+        - brews
+      operationId: postStore
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /brews/{brewId}/steeps:
+    get:
+      tags:
+        - brews
+      operationId: getIndexSteeps
+      parameters:
+        - name: brewId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    post:
+      tags:
+        - brews
+      operationId: postStoreSteep
+      parameters:
+        - name: brewId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /brews/{id}:
+    get:
+      tags:
+        - brews
+      operationId: getShow
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+        - brews
+      operationId: deleteDestroy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    patch:
+      tags:
+        - brews
+      operationId: patchPatch
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /health:
+    get:
+      tags:
+        - health
+      operationId: getHealth
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /health/live:
+    get:
+      tags:
+        - health
+      operationId: getLive
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /health/ready:
+    get:
+      tags:
+        - health
+      operationId: getReady
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /teapots:
+    get:
+      tags:
+        - teapots
+      operationId: getIndex
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    post:
+      tags:
+        - teapots
+      operationId: postStore
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /teapots/{id}:
+    get:
+      tags:
+        - teapots
+      operationId: getShow
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    put:
+      tags:
+        - teapots
+      operationId: putUpdate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+        - teapots
+      operationId: deleteDestroy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    patch:
+      tags:
+        - teapots
+      operationId: patchPatch
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /teapots/{teapotId}/brews:
+    get:
+      tags:
+        - teapots
+      operationId: getIndexByTeapot
+      parameters:
+        - name: teapotId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /teas:
+    get:
+      tags:
+        - teas
+      operationId: getIndex
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    post:
+      tags:
+        - teas
+      operationId: postStore
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+  /teas/{id}:
+    get:
+      tags:
+        - teas
+      operationId: getShow
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    put:
+      tags:
+        - teas
+      operationId: putUpdate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+        - teas
+      operationId: deleteDestroy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+    patch:
+      tags:
+        - teas
+      operationId: patchPatch
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+components:
+  schemas:
+    Brew:
+      type: object
+      title: Brew
+      properties:
+        completed_at:
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+        id:
+          type: string
+        notes:
+          type: string
+          nullable: true
+        started_at:
+          type: string
+          format: date-time
+        status:
+          type: object
+        tea_id:
+          type: string
+        teapot_id:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+        water_temp_celsius:
+          type: integer
+      required:
+        - id
+        - teapot_id
+        - tea_id
+        - status
+        - water_temp_celsius
+        - started_at
+        - created_at
+        - updated_at
+    Steep:
+      type: object
+      title: Steep
+      properties:
+        brew_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        duration_seconds:
+          type: integer
+        id:
+          type: string
+        notes:
+          type: string
+          nullable: true
+        rating:
+          type: integer
+          nullable: true
+        steep_number:
+          type: integer
+      required:
+        - id
+        - brew_id
+        - steep_number
+        - duration_seconds
+        - created_at
+    Tea:
+      type: object
+      title: Tea
+      properties:
+        caffeine_level:
+          type: object
+        created_at:
+          type: string
+          format: date-time
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+        name:
+          type: string
+        origin:
+          type: string
+          nullable: true
+        steep_temp_celsius:
+          type: integer
+        steep_time_seconds:
+          type: integer
+        type:
+          type: object
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - type
+        - caffeine_level
+        - steep_temp_celsius
+        - steep_time_seconds
+        - created_at
+        - updated_at
+    Teapot:
+      type: object
+      title: Teapot
+      properties:
+        capacity_ml:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+        material:
+          type: object
+        name:
+          type: string
+        style:
+          type: object
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - material
+        - capacity_ml
+        - style
+        - created_at
+        - updated_at
+    User:
+      type: object
+      title: User
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+        password:
+          type: string

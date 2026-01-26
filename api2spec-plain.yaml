@@ -1,0 +1,56 @@
+# api2spec configuration file
+# https://github.com/api2spec/api2spec
+
+framework: laravel
+output: openapi-plain.yaml
+format: yaml
+openapi:
+    version: 3.0.3
+    info:
+        title: API (Plain PHP Models)
+        description: Schema extraction from plain PHP 8 classes
+        version: 1.0.0
+        termsOfService: ""
+        contact:
+            name: ""
+            url: ""
+            email: ""
+        license:
+            name: ""
+            url: ""
+    servers: []
+    tags: []
+    security:
+        schemes: {}
+        default: []
+source:
+    paths:
+        - ./routes
+        - ./app/Models
+    include:
+        - '**/*.php'
+    exclude:
+        - vendor/**
+        - '**/Eloquent/**'
+        - '**/*_test.go'
+        - '**/testdata/**'
+        - node_modules/**
+        - .git/**
+        - dist/**
+        - build/**
+        - target/**
+        - '**/*.pb.go'
+        - '**/mock*.go'
+        - '**/mocks/**'
+generation:
+    mode: full
+    merge: false
+    strictMode: false
+    defaultResponses:
+        - "200"
+        - "400"
+        - "500"
+watch:
+    enabled: false
+    debounce: 500
+    onChange: ""
