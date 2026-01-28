@@ -1,43 +1,59 @@
-*.log
-.DS_Store
+# Dependencies
+/vendor
+/node_modules
+
+# Environment files
 .env
 .env.backup
 .env.production
 .env.local
-.phpactor.json
-.phpunit.result.cache
-/.fleet
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/.claude
-/auth.json
-/node_modules
+!.env.example
+
+# Laravel specific
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitkeep
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
-Homestead.json
-Homestead.yaml
-Thumbs.db
+/auth.json
 
 # Generated files
 /generated/
-/bootstrap/cache/*.php
-!/bootstrap/cache/.gitkeep
 
 # Testing
+.phpunit.result.cache
 .phpunit.cache/
+/.phpunit.cache
 coverage/
 
-# IDE
+# Composer
+composer.phar
+
+# Homestead
+Homestead.json
+Homestead.yaml
+
+# IDE and editors
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.phpactor.json
 *.swp
 *.swo
 *~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log
+yarn-error.log
 
 # Claude Code
 .claude/

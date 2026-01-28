@@ -404,6 +404,32 @@ components:
         - started_at
         - created_at
         - updated_at
+    BrewEloquent:
+      type: object
+      title: BrewEloquent
+      properties:
+        completed_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        notes:
+          type: string
+        started_at:
+          type: string
+          format: date-time
+        status:
+          type: string
+        tea_id:
+          type: string
+        teapot_id:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+        water_temp_celsius:
+          type: integer
     Steep:
       type: object
       title: Steep
@@ -431,6 +457,23 @@ components:
         - steep_number
         - duration_seconds
         - created_at
+    SteepEloquent:
+      type: object
+      title: SteepEloquent
+      properties:
+        brew_id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        duration_seconds:
+          type: integer
+        notes:
+          type: string
+        rating:
+          type: integer
+        steep_number:
+          type: integer
     Tea:
       type: object
       title: Tea
@@ -468,6 +511,30 @@ components:
         - steep_time_seconds
         - created_at
         - updated_at
+    TeaEloquent:
+      type: object
+      title: TeaEloquent
+      properties:
+        caffeine_level:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        description:
+          type: string
+        name:
+          type: string
+        origin:
+          type: string
+        steep_temp_celsius:
+          type: integer
+        steep_time_seconds:
+          type: integer
+        type:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
     Teapot:
       type: object
       title: Teapot
@@ -499,6 +566,26 @@ components:
         - style
         - created_at
         - updated_at
+    TeapotEloquent:
+      type: object
+      title: TeapotEloquent
+      properties:
+        capacity_ml:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        description:
+          type: string
+        material:
+          type: string
+        name:
+          type: string
+        style:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
     User:
       type: object
       title: User
